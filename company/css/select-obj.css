@@ -1,0 +1,87 @@
+/* 选择部门样式 */
+.ejgoback,
+.sjgoback{
+	position: absolute;
+	left: 10px;
+	top: 0;
+	display: none;
+	width: 20px;
+	height: 1.2em;
+	background: url(../img/back-arrow.png) no-repeat left center;
+	background-size: auto 100%;
+}
+.submenu{
+	padding: 15px 0;
+	font-size: 0.9em;
+	display: none;
+}
+.submenu>p{
+	display: inline-block;
+	color: #ff9900;
+}
+.submenu>span{
+	color: #666;
+}
+.submenu>p:after{
+	content: url(../img/arrow_r2.png);
+	vertical-align: middle;
+	margin-left: 3px;
+}
+.select-main{
+	color: #333;
+	background: #fff;
+}
+.selected{
+	background: url(../img/selected.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.check-all{
+	padding: 12px 10px;
+	border-bottom: 1px solid #dddddd;
+}
+.ej-bm-list,
+.bm-member-list{
+	display: none;
+}
+.check-all>i,
+.bm-list>li>i,
+.ej-bm-list>li>i,
+.bm-member-list>li>i{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	border: 1px solid #bec4cb;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+.bm-next{
+	width: 90%;
+	display: inline-block;
+}
+.check-all span,
+.bm-list>li span,
+.ej-bm-list>li span,
+.bm-member-list>li span{
+	padding-left: 10px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.bm-list>li,
+.ej-bm-list>li,
+.bm-member-list>li{
+	position: relative;
+	padding: 12px 10px;
+	border-bottom: 1px solid #dddddd;
+}
+.bm-list>li em,
+.ej-bm-list>li em,
+.bm-member-list>li em{
+	display: block;
+	position: absolute;
+	right: 10px;
+	top: 12px;
+	width: 20px;
+	height: 24px;
+	background: url(../img/arrow_r1.png) no-repeat right center;
+	background-size: auto 16px;
+}

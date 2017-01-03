@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport" >
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>企业管理</title>
+	<link rel="stylesheet" href="css/resetcss.css">
+	<link rel="stylesheet" href="css/company.css">
+	<script src="js/jquery.js"></script>
+</head>
+<body>
+	<!-- 顶栏 -->
+	<div class="manage-head">
+		<div class="content">
+			<a class="goback" href="javascript:;"></a>
+			<h2>企业管理</h2>
+		</div>
+	</div>
+	<!-- 顶栏 end-->
+	<!-- 内容主体 -->
+	<div class="company-codes">
+		<h1 id="now-code">1,244.26</h1>
+		<span>公共积分</span>
+	</div>
+	<div class="func-list">
+		<ul>
+			<li><a href="send-red.html"><img src="img/send-red.png" alt=""><p>发红包</p></a></li>
+			<li><a href="send-msg.html"><img src="img/send-msg.png" alt=""><p>发送消息</p></a></li>
+			<li><a href="check-member.html"><img src="img/check-member.png" alt=""><p>员工审核</p></a></li>
+			<li><a href="send-welfare.html"><img src="img/send-welfare.png" alt=""><p>发福利</p></a></li>
+		</ul>
+	</div>
+	<!-- 内容主体 end-->
+	<script>
+		(function(){
+			var num_s = "1224.26 ";
+			var nowCode = document.getElementById('now-code');
+			nowCode.innerHTML = parseFloat(num_s).toLocaleString();
+
+			//返回
+			$('.goback').click(function(){
+				history.go(-1);
+			})
+		})();
+	</script>
+</body>
+</html>

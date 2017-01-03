@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport" >
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>员工审核</title>
+	<link rel="stylesheet" href="css/resetcss.css">
+	<link rel="stylesheet" href="css/check-member.css">
+	<script src="js/jquery.js"></script>
+</head>
+<body>
+	
+	<!-- 顶栏 -->
+	<div class="manage-head">
+		<div class="content">
+			<a class="goback" href=""></a>
+			<h2>员工审核</h2>
+		</div>
+	</div>
+	<!-- 顶栏 end-->
+	<div class="nothing">暂无员工申请信息</div>
+	<!-- 内容主体 -->
+	<div class="member-list">
+		<ul>
+			<li>
+				<dl>
+					<dt><img src="img/head1.png" alt=""></dt>
+					<dd><p>15890469899</p><span>新进员工，麻烦通过一下</span></dd>
+				</dl>
+				<div class="choise">
+					<a class="refuse" href="javascript:;">拒绝</a>
+					<a class="agree" href="javascript:;">接受</a>
+				</div>
+			</li>
+			<li>
+				<dl>
+					<dt><img src="img/head1.png" alt=""></dt>
+					<dd><p>15890469899</p><span>新进员工，麻烦通过一下</span></dd>
+				</dl>
+				<div class="checked">已拒绝</div>
+			</li>
+			<li>
+				<dl>
+					<dt><img src="img/head1.png" alt=""></dt>
+					<dd><p>15890469899</p><span>新进员工，麻烦通过一下</span></dd>
+				</dl>
+				<div class="checked">已同意</div>
+			</li>
+			<li>
+				<dl>
+					<dt><img src="img/head1.png" alt=""></dt>
+					<dd><p>15890469899</p><span>新进员工，麻烦通过一下</span></dd>
+				</dl>
+				<div class="checked">已同意</div>
+			</li>
+		</ul>
+	</div>
+	<!-- 内容主体 end-->
+	<script>
+		//返回
+		$('.goback').click(function(){
+			history.go(-1);
+		})
+
+		var getLis = $('.member-list').find('li');
+		if(getLis.length<=0){
+			// console.log(1)
+			$('.nothing').show();
+		}else{
+			$('.nothing').hide();
+		}
+
+		//点击接收/拒绝按钮
+		toChoice('.refuse');
+		toChoice('.agree');
+		function toChoice(obj){
+			$(obj).click(function(){
+				var txt = $(this).text();
+				$(this).parent().html('已'+txt).removeClass('choise').addClass('checked');
+			})
+		}
+	</script>
+	
+</body>
+</html>

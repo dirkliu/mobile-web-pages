@@ -1,0 +1,40 @@
+/* 企业管理 */
+
+.company-codes{
+	color: #f29708;
+	padding: 1.1em 0;
+	text-align: center;
+	background: #f1f1f1;
+	border-bottom: 1px solid #ddd;
+}
+.company-codes>h1{
+	font-size: 2em;
+	font-weight: bold;
+}
+.company-codes>span{
+	font-size: 1em;
+}
+.func-list{
+	font-size: 1em;
+	background: #fff;
+	overflow: hidden;
+}
+.func-list li{
+	width: 33.3%;
+	padding: 10px 0;
+	text-align: center;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	float: left;
+}
+.func-list li>a{
+	display: block;
+}
+.func-list li img{
+	width: 40%;
+	margin: 0 auto;
+}
+.func-list li p{
+	font-size: 0.9em;
+	margin-top: 5px;
+}

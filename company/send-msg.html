@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport" >
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>发消息</title>
+	<link rel="stylesheet" href="css/resetcss.css">
+	<link rel="stylesheet" href="css/send-red.css">
+	<script src="js/jquery.js"></script>
+</head>
+<body>
+	
+	<!-- 顶栏 -->
+	<div class="manage-head">
+		<div class="content">
+			<a class="goback" href=""></a>
+			<h2>发消息</h2>
+		</div>
+	</div>
+	<!-- 顶栏 end-->
+	<!-- 内容主体 -->
+	<div class="red-input">
+		<div class="content">
+			<div class="send-obj"><a href="select-objs.html">
+				<span class="input-label">发送对象</span>
+				<div class="select-cell"><p></p></div></a>
+			</div>
+
+			<div class="input-box">
+				<span class="input-label">标题</span>
+				<div class="input-cell"><input class="codenums" name="codenums" type="text" placeholder="标题内容"></div>
+			</div><div class="warn-txt">写个标题吧！</div>
+
+			<div class="txtare for-yellow">
+				<textarea name="words" id="words" maxLength="200" placeholder="工作顺利！事业有成！"></textarea>
+				<span>最多输入200个字</span>
+			</div>
+
+			<div class="btn-box">
+				<button class="btn-yellow" disabled="disabled">确定发布</button>
+			</div>
+		</div>
+	</div>
+	<!-- 内容主体 end-->
+
+	
+
+	<!-- 发送成功 -->
+	<div class="result">
+		<img src="img/success.png" alt="">
+		<p>发送成功！</p>
+	</div>
+	<!-- 发送成功 end-->
+	
+	<script src="js/queryUrl.js"></script>
+	<script>
+		//返回
+		$('.goback').click(function(){
+			history.go(-1);
+		})
+		var result = $('.result').outerWidth();
+		$('.result').css('marginLeft','-'+(result/2)+'px')
+		
+		//获取已选择的对象
+		var str = queryUrl(document.location.href,'str');
+		$('.select-cell>p').text(str);
+
+		//点击发送
+		$('.btn-yellow').click(function(){
+			//判断是否填写内容
+			var words = $('#words');
+			var objs = $('.select-cell>p');
+			if(objs.text() == ''){
+				alert('请选择发送对象！')
+			}else if(words.val() == ''){
+				alert('消息内容不能为空！')
+			}else{
+				$('.result').animate({
+					'top':'30%'
+				});
+				hidefc();
+			}
+			
+		})
+		$('.codenums').blur(function(){
+			isEmpty('.codenums');
+		})
+
+		$('.txtare>textarea').focus(function(){
+			$('body').animate({
+				'marginTop':'-30%'
+			})
+		});
+		$('.txtare>textarea').blur(function(){
+			$('body').animate({
+				'marginTop':'0'
+			})
+		});
+
+		function isEmpty(obj){
+			if($(obj).val() == ''){
+				// console.log(1)
+				$(obj).parent().parent().next().show();
+			}else{
+				$('.btn-yellow').removeAttr('disabled').css('background','#f7a929');
+				$(obj).parent().parent().next().hide();
+			}
+		}
+		function hidefc(){
+			setTimeout(function(){
+				$('.result').animate({
+					'top':'-120%'
+				});
+			},1000)
+		}
+	</script>
+	
+</body>
+</html>

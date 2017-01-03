@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<script type="text/javascript">
+	/*
+		var pixe = 1/window.devicePixelRatio;
+		document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixe+', minimum-scale='+pixe+', maximum-scale='+pixe+'">');
+	
+		var html  = document.getElementsByTagName('html')[0];
+		var htmlW = html.getBoundingClientRect().width;
+	
+		//html.style.background = 'red';
+		html.style.fontSize = htmlW/10 +'px';
+	*/
+			fnsrcll();
+			function fnsrcll(){
+				var html  = document.getElementsByTagName('html')[0];
+				var htmlW = html.getBoundingClientRect().width;
+				
+				//html.style.width = 540+'px';
+				htmlW = htmlW>540 ? 540 : htmlW;
+				html.style.width = htmlW+'px';
+				html.style.fontSize = htmlW/10 +'px';
+			}
+			window.addEventListener('resize',fnsrcll,false);  //窗口变化时调整htmlW大小
+	//alert(window.screen.availWidth)
+	</script>
+	<link type="text/css" rel="stylesheet/less" href="css/style.less"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!--<link rel="stylesheet" type="text/css" href="css/index.css">-->
+</head>
+<body>
+	<header>
+		<div  class="header_top clear">
+			<div class="option_left"></div>
+			<div class="suo_center"><img src="images/ion_suo.png" alt=""> zhouxin</div>
+			<div class="headre_right"></div>			
+		</div>
+		<nav>
+			<ul class="clear">
+				<li class="nav_zh">综合</li>
+				<li>销量</li>
+				<li>价格</li>
+				<li>筛选</li>
+			</ul>
+		</nav>
+	</header>
+	<ul class="main">
+		<li class="clear">
+			<a href="#">
+				<img src="images/iphone.jpg"/>
+				<section>
+					<p>苹果（Apple）iPhone 6(A1586) 16GB 金色 移动联通电信4G手机</p>
+					<strong>￥4888:00</strong>
+					<span>好评96% 59091人</span>
+				</section>
+			</a>
+		</li>
+		<li class="clear">
+			<a href="#">
+				<img src="images/iphone.jpg"/>
+				<section>
+					<p>苹果（Apple）iPhone 6(A1586) 16GB 金色 移动联通电信4G手机</p>
+					<strong>￥4888:00</strong>
+					<span>好评96% 59091人</span>
+				</section>
+			</a>
+		</li>
+		<li class="clear">
+			<a href="#">
+				<img src="images/iphone.jpg"/>
+				<section>
+					<p>苹果（Apple）iPhone 6(A1586) 16GB 金色 移动联通电信4G手机</p>
+					<strong>￥4888:00</strong>
+					<span>好评96% 59091人</span>
+				</section>
+			</a>
+		</li>		
+		<li class="clear">
+			<a href="#">
+				<img src="images/iphone.jpg"/>
+				<section>
+					<p>苹果（Apple）iPhone 6(A1586) 16GB 金色 移动联通电信4G手机</p>
+					<strong>￥4888:00</strong>
+					<span>好评96% 59091人</span>
+				</section>
+			</a>
+		</li>		
+		<li class="clear">
+			<a href="#">
+				<img src="images/iphone.jpg"/>
+				<section>
+					<p>苹果（Apple）iPhone 6(A1586) 16GB 金色 移动联通电信4G手机</p>
+					<strong>￥4888:00</strong>
+					<span>好评96% 59091人</span>
+				</section>
+			</a>
+		</li>		
+		
+	</ul>
+</body>
+</html>

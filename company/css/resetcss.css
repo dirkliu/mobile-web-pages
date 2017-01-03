@@ -1,0 +1,100 @@
+html, body, div, span, applet,
+object, iframe, h1, h2, h3, h4,
+h5, h6, p, blockquote, pre, a, abbr,
+acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody, tfoot,
+thead, tr, th, td, article, aside, canvas, details,
+embed, figure, figcaption, footer, header, menu, nav,
+output, ruby, section, summary, time, mark, audio, video,textarea {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: "Microsoft YaHei", "Hiragino Sans GB", "PingHei", "WenQuanYi Micro Hei", "黑体", sans-serif;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+* {
+	tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-ms-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+ul,
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: #333;
+}
+img {
+	display: block;
+	border: 0;
+}
+dd {
+	display: block;
+	-webkit-margin-start: 40px;
+}
+:focus {
+	outline: none;
+}
+div,
+span,
+a,
+header {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+body{
+	width: 100%;
+	height: 100%;
+	background: #f0f0f0;
+}
+
+/* 顶部标题栏 */
+.red-head{
+	background: #de322e
+}
+.manage-head{
+	background: #f7a929;
+}
+.manage-head,
+.red-head{
+	padding: 15px 0;
+	text-align: center;
+	font-size: 1.2em;
+	color: #fff;
+}
+.manage-head .content,
+.red-head .content{
+	position: relative;
+}
+.goback{
+	position: absolute;
+	left: 10px;
+	top: 0;
+	display: block;
+	width: 20px;
+	height: 1.2em;
+	background: url(../img/back-arrow.png) no-repeat left center;
+	background-size: auto 100%;
+}
+.select-over{
+	position: absolute;
+	right: 10px;
+	top: 0.1em;
+	background: transparent;
+	border: none;
+	font-size: 0.9em;
+	color: #cc8a20;
+}

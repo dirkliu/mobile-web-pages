@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport" >
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>选择部门</title>
+	<link rel="stylesheet" href="css/resetcss.css">
+	<link rel="stylesheet" href="css/select-obj.css">
+	<script src="js/jquery.js"></script>
+</head>
+<body>
+	<!-- 顶栏 -->
+	<div class="manage-head">
+		<div class="content">
+			<a class="goback" href="javascript:;"></a>
+			<a class="ejgoback" href="javascript:;"></a>
+			<a class="sjgoback" href="javascript:;"></a>
+			<h2>选择部门</h2>
+			<button class="select-over" disabled="disabled">确定</button>
+		</div>
+	</div>
+	<!-- 顶栏 end-->
+	<!-- 内容主体 -->
+	<div class="submenu">
+		<p>北京积分互联科技有限公司</p>
+	</div>
+	<div class="select-main">
+		<div class="check-all"><i></i><span>全选</span></div>
+		<ul class="bm-list">
+			<li><i></i><div class="bm-next"><span>UI设计部</span><em></em></div></li>
+			<li><i></i><div class="bm-next"><span>市场部</span><em></em></div></li>
+			<li><i></i><div class="bm-next"><span>人力资源部</span><em></em></div></li>
+		</ul>
+		<ul class="ej-bm-list">
+			<li><i></i><div class="bm-next"><span>UI设计部</span><em></em></div></li>
+			<li><i></i><div class="bm-next"><span>UI设计部</span><em></em></div></li>
+			<li><i></i><div class="bm-next"><span>UI设计部</span><em></em></div></li>
+		</ul>
+		<ul class="bm-member-list">
+			<li><i></i><div class="bm-next"><span>张三</span><em></em></div></li>
+			<li><i></i><div class="bm-next"><span>李四</span><em></em></div></li>
+			<li><i></i><div class="bm-next"><span>赵五</span><em></em></div></li>
+		</ul>
+	</div>
+	<!-- 内容主体 end-->
+	<script src="js/select.js"></script>
+	<script>
+	$(function(){
+		//返回
+		$('.goback').click(function(){
+			history.go(-1);
+		})
+		
+		$('.select-over').click(function(){
+			newArr = [];
+			var len = checkedIs.length;
+			for(var n=0;n<len;n++){
+				if(checkedIs.eq(n).attr('checked')){
+					newArr.push(checkedIs.eq(n).next().children('span').text()+'、');//将被选中的元素文本加入到数组
+					// console.log(newArr)
+				}
+			}
+			if(newArr.length>=3){
+				str = newArr[0]+newArr[1]+newArr[2];
+			}else if(newArr.length<3){
+				for(var i=0;i<newArr.length;i++){
+					str=newArr[i]+str;
+				}
+			}
+			window.location.href = 'send-msg.html?str='+str;
+			// console.log(newArr[0]+newArr[1]+newArr[2])
+		});
+	})
+	</script>
+</body>
+</html>

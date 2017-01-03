@@ -1,0 +1,72 @@
+/* 员工申请 */
+.nothing{
+	position: absolute;
+	top: 30%;
+	left: 0;
+	width: 100%;
+	color:#ccc;
+	text-align: center;
+	display: none;
+}
+.member-list li{
+	position: relative;
+	padding: 10px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.member-list dl{
+	display: table;
+}
+.member-list dt,
+.member-list dd{
+	display: table-cell;
+	vertical-align: middle;
+}
+.member-list dt{
+	width: 15%;
+}
+.member-list dt>img{
+	width: 100%;
+	border-radius: 10px;
+}
+.member-list dd{
+	padding-left: 10px;
+}
+.member-list dd>span{
+	width: 70%;
+	display: block;
+	padding-top: 6px;
+	color: #999;
+	font-size: 0.9em;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.checked{
+	margin-top: -13px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+.checked,
+.choise{
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	color: #999
+}
+.choise{
+	margin-top: -15px;
+}
+.choise>a{
+	display: inline-block;
+	padding: 5px;
+	border-radius: 5px;
+	color: #fff;
+}
+.choise>a.refuse{
+	margin-right: 2px;
+	background: #f13f28;
+}
+.choise>a.agree{
+	background: #1eb3ef;
+}

@@ -1,0 +1,330 @@
+/* 发福利 */
+/* 发红包 */
+.red-input{
+	margin-top: 20px;
+	padding: 0 10px;
+	color: #333;
+}
+.input-box input{
+	border:none;
+	font-size: 1em;
+	text-align: right;
+}
+.input-box{
+	width: 100%;
+	margin-top: 1px;
+	display: table;
+	padding: 10px;
+	border-radius: 10px;
+	background: #fff;
+}
+.send-obj{
+	margin-top: 1px;
+	padding: 10px;
+	border-radius: 10px;
+	background: #fff;
+}
+.send-obj>a{
+	width: 100%;
+	display: table;
+}
+.select-cell{
+	text-align: right;
+	background: url(../img/arrow_r.png) no-repeat right center;
+	background-size: auto 20px;
+}
+.select-cell>p{
+	width: 90%;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow: hidden;
+}
+.input-label,
+.input-cell,
+.select-cell{
+	display: table-cell;
+	white-space: nowrap;
+}
+.input-label{
+	width: 30%;
+}
+.input-cell{
+	width: 70%;
+	text-align: right;
+}
+.input-cell>input{
+	margin-right: 5px;
+	width: 70%;
+}
+.judge{
+	margin-top: 20px;
+}
+.judge .input-label{
+	width: 50%;
+}
+.slide-box{
+	position: relative;
+	width: 50%;
+	display: table-cell;
+}
+.slide-btn{
+	position: absolute;
+	right: 0;
+	top: -2px;
+	width: 60px;
+	height: 26px;
+	background: #fff;
+	border: 1px solid #e1e1e1;
+	border-radius: 1.6em;
+}
+.slide-btn>i{
+	display: block;
+	width: 30px;
+	height: 24px;
+	background: #fff;
+	border-radius: 1.6em;
+	/*border: 1px solid #d9d9d9;*/
+	box-shadow: 1px 1px 3px rgba(0,0,0,.3);
+}
+.robnum{
+	display: none;
+}
+.robnum .content{
+	width: 100%;
+	display: table;
+}
+.robnum .warn-txt{
+	margin-top: 5px;
+}
+.warn-txt{
+	display: none;
+	text-align: right;
+	font-size: 0.75em;
+	color:red;
+}
+.txtare{
+	position: relative;
+	margin-top: 20px;
+	padding: 5px;
+	border-radius: 10px;
+	background: #fff;
+}
+#words{
+	font-size: 0.9em;
+	height: 12em;
+}
+.txtare>textarea{
+	padding: 5px;
+	width: 100%;
+	height: 2.4em;
+	font-size: 1.1em;
+	text-align: center;
+	color: #333;
+}
+.txtare>span{
+	display: block;
+	text-align: right;
+	font-size: 0.75em;
+	color: #999;
+}
+
+.code-number{
+	margin-top: 15px;
+	width: 100%;
+	font-size: 1.1em;
+	text-align: center;
+}
+.code-number>i{
+	padding-right: 5px;
+	font-style: normal;
+	color: #de322e;
+	font-size: 2em;
+	vertical-align: sub;
+}
+
+.btn-box{
+	margin-top: 15px;
+	padding-bottom: 30px;
+}
+.btn-box>button{
+	width: 100%;
+	color: #fff;
+	padding: 12px 0;
+	text-align: center;
+	font-size: 1.1em;
+	border: 0;
+	border-radius: 10px;
+}
+.btn-yellow{
+	background: #f1b35c;
+}
+.btn-red{
+	background: #f5978c;
+}
+/* 输入密码 */
+.layer{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background: rgba(0,0,0,.3);
+}
+#keyboard{
+	position: absolute;
+	left: -100%;
+	top: 30%;
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+	padding: 10px;
+	background: #fff;
+	border-radius: 10px;
+	z-index: 8;
+}
+#keyboard p{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #999;
+}
+#keyboard span{
+	display: block;
+	margin: 10px 0;
+	font-size: 14px;
+}
+#money{
+	font-size: 20px;
+}
+#keyboard .passWord{
+	position: relative;
+	margin: 10px auto;
+	width: 90%;
+}
+#keyboard .passWord .putin{
+	width: 100%;
+	height: 36px;
+}
+#keyboard .passWord input{
+	width: 100%;
+}
+#keyboard .passWord ul{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: table;
+	border-width: 1px 0 1px 1px;
+	border-style: solid;
+	border-color: #e5e5e5;
+	background: #fff;
+	z-index: 9;
+}
+#keyboard .passWord li{
+	text-align: center;
+	font-size: 22px;
+	width: 16.6%;
+	height: 36px;
+	display: table-cell;
+	border-right:1px solid #e5e5e5;
+}
+#keyboard .passWord li i{
+	display: block;
+	width: 10px;
+	height: 10px;
+	background: #000;
+	border-radius: 50%;
+	margin: 13px auto;
+}
+#keyboard .wrong,
+#setKey .wrong{
+	display: none;
+	color: red;
+}
+/* 设置密码 */
+#setKey{
+	position: absolute;
+	left: -120%;
+	top: 30%;
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+	padding: 10px;
+	background: #fff;
+	border-radius: 10px;
+	z-index: 8;
+}
+#setKey p{
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #999;
+}
+#setKey span{
+	padding-left: 10px;
+	display: block;
+	text-align: left;
+	font-size: 14px;
+	color: #999;
+}
+#setKey .passWord{
+	position: relative;
+	margin: 10px auto;
+	width: 90%;
+}
+#setKey .passWord .putin{
+	width: 100%;
+	height: 36px;
+}
+#setKey .passWord input{
+	width: 100%;
+}
+#setKey .passWord ul{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: table;
+	border-width: 1px 0 1px 1px;
+	border-style: solid;
+	border-color: #e5e5e5;
+	background: #fff;
+	z-index: 9;
+}
+#setKey .passWord li{
+	text-align: center;
+	font-size: 22px;
+	width: 16.6%;
+	height: 36px;
+	display: table-cell;
+	border-right:1px solid #e5e5e5;
+}
+#setKey .passWord li i{
+	display: block;
+	width: 10px;
+	height: 10px;
+	background: #000;
+	border-radius: 50%;
+	margin: 13px auto;
+}
+
+.result{
+	position: absolute;
+	left: 50%;
+	top: -120%;
+	width: 40%;
+	padding: 15px 0;
+	text-align: center;
+	color: #fff;
+	font-size: 0.9em;
+	background: rgba(0,0,0,.5);
+	border-radius: 10px;
+	z-index: 9;
+}
+.result img{
+	width: 30%;
+	margin: 0 auto;
+}
+.result p{
+	margin-top: 10px;
+}

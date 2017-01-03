@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport" >
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>发红包</title>
+	<link rel="stylesheet" href="css/resetcss.css">
+	<link rel="stylesheet" href="css/send-red.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/send-red.js"></script>
+</head>
+<body>
+	<!-- 顶栏 -->
+	<div class="red-head">
+		<div class="content">
+			<a class="goback" href=""></a>
+			<h2>发红包</h2>
+		</div>
+	</div>
+	<!-- 顶栏 end-->
+	<!-- 内容主体 -->
+	<div class="red-input">
+		<div class="content">
+			<div class="input-box">
+				<span class="input-label">红包个数</span>
+				<div class="input-cell"><input class="rednums" name="rednums" type="tel" placeholder="1~2000"><span>个</span></div>
+			</div><div class="warn-txt">只能是数字哦！</div>
+
+			<div class="input-box">
+				<span class="input-label">总积分</span>
+				<div class="input-cell"><input class="codenums" name="codenums" type="tel" placeholder="最高10000"><span>积分</span></div>
+			</div><div class="warn-txt">只能是数字哦！</div>
+
+			<div class="input-box judge">
+				<span class="input-label">是否允许打劫</span>
+				<div class="slide-box"><div class="slide-btn"><i></i></div></div>
+			</div>
+
+			<div class="input-box robnum">
+				<div class="content">
+					<span class="input-label">打劫次数</span>
+					<div class="input-cell"><input class="robnums" type="tel" placeholder="10~100"><span>次</span></div>
+				</div><div class="warn-txt">只能是数字哦！</div>
+			</div>
+
+			<div class="txtare">
+				<textarea name="words" maxLength="15" placeholder="发福利喽！大家加油！"></textarea>
+				<span>最多输入15个字</span>
+			</div>
+
+			<div class="code-number"><i>0</i>积分</div>
+			<div class="btn-box">
+				<button class="btn-red" disabled="disabled">确定发放</button>
+			</div>
+		</div>
+	</div>
+	<!-- 内容主体 end-->
+
+	<!-- 输入密码弹窗 -->
+	<div id="keyboard">
+		<p>请输入支付密码</p>
+		<span>发福利</span>
+		<div id="money"></div>
+		<div class="passWord">
+			<div class="putin"><input name="psdw" id="pws" maxlength="6" onkeyup="return false" type="tel"></div>
+			<ul class="lines">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<span class="wrong">密码输入不正确！</span>
+	</div>
+	<div class="layer"></div>
+	<!-- 输入密码弹窗 end-->
+	<!-- 设置密码弹窗 -->
+	<div id="setKey">
+		<p>设置支付密码</p>
+		<span>请输入支付密码</span>
+		<div id="set" class="passWord">
+			<div class="putin"><input name="psdw" id="pws1" maxlength="6" onkeyup="return false" type="tel"></div>
+			<ul class="lines1">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<span>请再次输入密码</span>
+		<div id="sets" class="passWord">
+			<div class="putin"><input name="psdw" id="pws2" maxlength="6" onkeyup="return false" type="tel"></div>
+			<ul class="lines2">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<span class="wrong">密码输入不正确！</span>
+	</div>
+	<!-- 设置密码弹窗 end-->
+
+	<!-- 发送成功 -->
+	<div class="result">
+		<img src="img/success.png" alt="">
+		<p>发送成功！</p>
+	</div>
+	<!-- 发送成功 end-->
+
+	<script>
+		//返回
+		$('.goback').click(function(){
+			history.go(-1);
+		});
+		//输入密码弹窗
+		var keyboard = $('#keyboard').outerWidth();
+		$('#keyboard,#setKey').css('marginLeft','-'+(keyboard/2)+'px');
+
+		var result = $('.result').outerWidth();
+		$('.result').css('marginLeft','-'+(result/2)+'px')
+
+
+		var pwData = '';//设置的密码
+		
+		var wrg = $('.wrong');//密码输入错误提示
+
+
+		//点击输入密码触发input
+		$('#keyboard').find('.lines').click(function(){
+			wrg.hide();
+			$('#keyboard').find('#pws').val('').focus();//获取焦点
+			getValue('#keyboard','#pws');//调用函数
+			
+		});
+
+		//点击设置密码
+		$('#set').find('.lines1').click(function(){
+			wrg.hide();
+			$('#set').find('#pws1').val('').focus();//获取焦点
+			getValue('#set','#pws1');//调用函数
+		});
+		$('#sets').find('.lines2').click(function(){
+			wrg.hide();
+			$('#sets').find('#pws2').val('').focus();//获取焦点
+			getValue('#sets','#pws2');//调用函数
+		});
+
+		function getValue(id,obj){
+			var pws = $(id).find(obj);
+			var lis = $(id).find('li');
+			var timer = setInterval(function(){
+				var pwLength = pws.val().length;//input长度
+				// console.log(pws.val())
+				if(pwLength == 0){
+					lis.empty();
+				}
+				if(pwLength >0 && pwLength <= 6){
+					addI(pwLength,lis);
+				}
+				// console.log(1);
+			},100);
+			
+			$('#keyboard').find('#pws').blur(function(){
+				clearInterval(timer);
+			})
+
+			
+			$('#sets').find('#pws2').blur(function(){
+				clearInterval(timer);
+			})
+
+		}
+
+		$('#keyboard').find('#pws').blur(function(){
+			
+			var nowLen = $('#keyboard').find('#pws').val().length;
+			var nowVal = $('#keyboard').find('#pws').val();
+			// console.log(nowVal)
+			if(nowVal == parseInt(pwData) && nowLen == 6){
+				//密码输入正确后提示
+				$('#keyboard').animate({
+					'left':'-200%'
+				});
+				$('.result').animate({
+					'top':'30%'
+				});
+				hidefc();
+				$('#keyboard').find('li').empty();
+			}else{
+				//密码输入错误提示
+				wrg.show();
+				$('#pws').val('');
+				$('#keyboard').find('li').empty();
+			}
+		})
+
+		
+		$('#sets').find('#pws2').blur(function(){
+			
+			var setVal = $('#set').find('#pws1').val();
+			var setsVal = $('#sets').find('#pws2').val();
+			if(setVal == setsVal && setVal.length == 6 && setsVal.length == 6){
+				pwData = setsVal;//输入的密码值赋值给pwData
+				$('#setKey').animate({
+					'left':'-200%'
+				});
+				$('#keyboard').animate({
+					'left':'50%'
+				});
+			}else if(setsVal != setVal){
+				wrg.show();
+			}
+		})
+
+		function addI(obj,lis){
+			var newI = $('<i>');
+			lis.empty();
+			for(var i=0;i<obj;i++){
+				lis.eq(i).append(newI.clone());
+			}
+		}
+
+		function hidefc(){
+			setTimeout(function(){
+				$('.result').animate({
+					'top':'-120%'
+				});
+				$('.layer').hide();
+			},1000)
+		}
+
+	</script>
+	
+</body>
+</html>
